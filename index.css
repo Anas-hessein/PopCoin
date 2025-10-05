@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+    background-color: rgb(255, 131, 131);
+    display: flex;
+    color: #E0D0C6;
+}
+
+
+#popcat {
+    width: 400px;
+}
+
+
+@media only screen and (max-width: 480px) {
+    #popcat {
+        width: 200px;
+    }
+}
+
+#count {
+    font-size: xxx-large;
+    font-weight: bolder;
+}
+
+.popcat-item {
+    width: 200px;   
+    height: 200px;      
+}
