@@ -1,28 +1,246 @@
-body {
-    height: 100vh;
-    background-color: rgb(255, 131, 131);
-    display: flex;
-    color: #E0D0C6;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+}
+
+
+#count {
+    font-size: 3rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.wrapper {
+    margin: 20px 0;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.wrapper:active {
+    transform: scale(0.95);
+}
 
 #popcat {
     width: 400px;
+    height: 400px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: filter 0.2s;
+}
+
+#popcat:hover {
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
 }
 
 
-@media only screen and (max-width: 480px) {
-    #popcat {
-        width: 200px;
-    }
+button {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 10px;
 }
 
-#count {
-    font-size: xxx-large;
-    font-weight: bolder;
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: linear-gradient(135deg, #999 0%, #666 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#nBtn {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    margin-top: 20px;
+}
+
+
+.shop-header {
+    text-align: center;
+    margin: 20px 0 40px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.shop-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#shop-coins {
+    font-weight: bold;
+    font-size: 2rem !important;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+body > div:last-of-type {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+body > div:last-of-type > h2 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+body > div:last-of-type > div {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body > div:last-of-type > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .popcat-item {
-    width: 200px;   
-    height: 200px;      
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.popcat-item:hover {
+    transform: scale(1.05);
+}
+
+body > div:last-of-type > div h5 {
+    font-size: 1.3rem;
+    margin: 15px 0 10px 0;
+    color: #fff;
+}
+
+body > div:last-of-type > div h6 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #ffd700;
+    font-weight: 600;
+}
+
+
+.activate-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    margin-top: 10px;
+}
+
+.activate-btn:disabled {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #popcat {
+        width: 280px;
+        height: 280px;
+    }
+    
+    #count {
+        font-size: 2rem;
+        padding: 10px 20px;
+    }
+    
+    #shop-coins {
+        font-size: 1.5rem !important;
+        padding: 10px 20px;
+    }
+    
+    .shop-header h1 {
+        font-size: 2rem;
+    }
+    
+    body > div:last-of-type {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #popcat {
+        width: 220px;
+        height: 220px;
+    }
+    
+    #count {
+        font-size: 1.5rem;
+    }
+    
+    .popcat-item {
+        width: 150px;
+        height: 150px;
+    }
 }

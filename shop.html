@@ -3,53 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <title>Shop</title>
 </head>
 <body>
-    <p id="count"></p>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <span id="shop-coins"></span>
+    </div>
     <div class="shop-header">
-        <h1>Welcome to the Shop!</h1>
-        <button onclick="location.href='index.html'"> Back to the main</button>
+        <h1>🛍️ PopCat Shop</h1>
+        <button onclick="location.href='index.html'">← Back to Game</button>
     </div>
 
 <div>
     <h2> Items! </h2>
     <div>
+        <img src="opened.png" class="popcat-item">
+        <h5>popCat original skin</h5>
+        <h6>price: Free!</h6>
+        <button class="activate-btn" id="activate-original" onclick='activateItem({closed:"closed.png",opened:"opened.png",name:"original",buttonId:"activate-original"})'>Activate</button>
+    </div>
+
+    <div>
         <img class="popcat-item" src="popcat opend 3.png" >
-        <h5> popCat tom skin </h5>
-        <h6> price: 100 coins</h6>
-        <button onclick="buying()">Buy!</button>
+        <h5>popCat tom skin</h5>
+        <h6>price: 100 coins</h6>
+    <button id="buy-tom" onclick="buySkinTom()">Buy!</button>
+    <button class="activate-btn" id="activate-tom" style="display:none;" onclick='activateItem({closed:"popcat closed 3.png",opened:"popcat opend 3.png",name:"tom",buttonId:"activate-tom"})'>Activate</button>
     </div>
 
     <div>
         <img class="popcat-item" src="popcat opend 1.png" >
-        <h5> popCat handy skin </h5>
-        <h6> price: 100 coins</h6>
-        <button>Buy!</button>
+        <h5>popCat handy skin</h5>
+        <h6>price: 100 coins</h6>
+        <button id="buy-handy" onclick="buySkinHandy()">Buy!</button>
+    <button class="activate-btn" id="activate-handy" style="display:none;" onclick='activateItem({closed:"popcat closed 1.png",opened:"popcat opend 1.png",name:"handy",buttonId:"activate-handy"})'>Activate</button>
     </div>
-    
+
     <div>
         <img class="popcat-item" src="popcat opend 2.png" >
-        <h5> popCat cartoonish skin </h5>
-        <h6> price: 100 coins</h6>
-        <button>Buy!</button>
+        <h5>popCat cartoonish skin</h5>
+        <h6>price: 100 coins</h6>
+        <button id="buy-cartoon" onclick="buySkinCartoon()">Buy!</button>
+    <button class="activate-btn" id="activate-cartoon" style="display:none;" onclick='activateItem({closed:"popcat closed 2.png",opened:"popcat opend 2.png",name:"cartoonish",buttonId:"activate-cartoon"})'>Activate</button>
     </div>
-
-    <div>
-        <img >
-        <h5> Minecraft game theme </h5>
-        <h6> price: 100 coins</h6>
-        <button>Buy!</button>
-    </div>
-
-    <div>
-        <img >
-        <h5> Valorant game theme </h5>
-        <h6> price: 100 coins</h6>
-        <button>Buy!</button>
-    </div>
-
 </div>
 
 </body>
